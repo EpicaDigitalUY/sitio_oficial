@@ -1,0 +1,453 @@
+/* Importar fuentes */
+
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Ancizar+Sans:ital,wght@0,100..1000;1,100..1000&family=Oswald:wght@200..700&family=Permanent+Marker&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Variables */
+
+main {
+    --brand-dark: #05101f;
+    --brand-light: #2ee0d4;
+}
+
+/* Propiedades generales */
+
+* {
+    scroll-behavior: smooth;
+}
+
+#inicio {
+    scroll-margin-top: 150px;
+}
+
+#servicios,
+#nosotros,
+#contacto {
+    scroll-margin-top: 30px;
+}
+
+h1 {
+    font-family: "Poppins", sans-serif;
+    font-size: 70px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+section {
+    margin: 0 150px 0 150px;
+}
+
+.font-color {
+    color: #fff;
+    font-size: 70px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #1ac8bc;
+}
+
+p {
+    line-height: 1.6;
+}
+
+/* Estilos del encabezado */
+
+header {
+    background-color: #05101f;
+    width: 100vw;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    position: fixed;
+}
+
+header img {
+    height: 80px;
+    margin: 10px 10px 10px 100px;
+    border: solid 1px transparent;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+header img:hover {
+    transform: scale(1.1);
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-right: 100px;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+header ul li a:hover {
+    color: #2ee0d4;
+}
+
+/* Estilos del banner */
+
+.banner {
+    height: 94vh;
+    /* Ocupa el alto total de la pantalla */
+    width: 100%;
+    padding-top: 50px;
+    background: url("img/banner.png") no-repeat center center;
+    background-size: cover;
+    /* Ajusta la imagen para cubrir todo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+/* Estilos del Inicio */
+
+.inicio {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inicio-texto {
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+.inicio img {
+    width: 500px;
+    height: auto;
+    margin-left: 50px;
+}
+
+/* Estilos de Servicios */
+
+.servicios {
+    padding: 80px 5%;
+    text-align: center;
+}
+
+.servicios h2 {
+    font-size: 50px;
+    margin-bottom: 50px;
+    color: #05101f;
+}
+
+.servicios-contenedor {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.servicio {
+    background: #fff;
+    padding: 30px 20px;
+    border-radius: 15px;
+    border: solid 2px #1ac8bc;
+    box-shadow: 0 0 0 #1ac8bc;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.servicio:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 0px #1ac8bc;
+}
+
+.servicio h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #05101f;
+}
+
+.servicio p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.nosotros {
+    align-items: center;
+    gap: 60px;
+    padding: 80px 0;
+}
+
+.nosotros h2 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: #05101f;
+    text-align: center;
+}
+
+.nosotros-contenedor {
+    display: flex;
+    justify-content: space-between;
+    gap: 70px;
+}
+
+.nosotros-contenedor img {
+    width: 400px;
+    height: auto;
+    border-radius: 15px;
+    margin-right: 50px;
+}
+
+.nosotros-texto {
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+/* Estilos de Contacto */
+
+.contacto {
+    padding: 80px 5%;
+    text-align: center;
+}
+
+.contacto h2 {
+    font-size: 50px;
+    margin-bottom: 30px;
+    color: #05101f;
+}
+
+.contacto-formulario {
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    background: #fff;
+    padding: 40px 30px;
+    align-items: center;
+    border-radius: 15px;
+    border: solid 2px #1ac8bc;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contacto-formulario input,
+.contacto-formulario textarea {
+    width: 95%;
+    padding: 15px;
+    border: 2px solid #05101f;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    resize: none;
+    transition: border-color 0.3s;
+}
+
+.contacto-formulario input:focus,
+.contacto-formulario textarea:focus {
+    border-color: #2ee0d4;
+    outline: none;
+}
+
+.contacto-formulario button {
+    background: transparent;
+    color: #05101f;
+    border: solid 2px #05101f;
+    padding: 15px 150px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.contacto-formulario button:hover {
+    background: #05101f;
+    color: #fff;
+}
+
+.contacto-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.contacto-contenedor a {
+    text-decoration: none;
+    color: #05101f;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+    margin-bottom: 20px;
+}
+
+.contacto-contenedor a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos del pie de página */
+footer {
+    background: #05101f;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+    padding: 50px;
+}
+
+footer p {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    color: #ccc;
+}
+
+footer .redes-sociales {
+    gap: 50px;
+}
+
+footer a {
+    color: #2ee0d4;
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+/* Estilos responsivos */
+@media (max-width: 900px) {
+    section {
+        margin: 0 30px;
+    }
+
+    header img {
+        margin-left: 20px;
+    }
+
+    header ul {
+        margin-right: 20px;
+        gap: 9px;
+    }
+
+    .nosotros-contenedor {
+        gap: 20px;
+    }
+
+    .nosotros-contenedor img {
+        width: 220px;
+        margin-right: 20px;
+    }
+
+    .inicio img {
+        width: 250px;
+        margin-left: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 70px;
+        position: relative;
+
+    }
+
+    header ul li {
+        list-style: none;
+    }
+
+    header ul li a {
+        text-decoration: none;
+        color: #ccc;
+        font-size: .9rem;
+        display: block;
+        padding: 10px 0;
+    }
+
+    header img {
+        height: 50px;
+        margin: 10px 0;
+    }
+
+    section {
+        margin: 0 10px;
+    }
+
+    .banner {
+        height: 25vh;
+        width: auto;
+        padding-top: 20px;
+        font-size: 1rem;
+    }
+
+    h1,
+    .font-color {
+        font-size: 2rem;
+        -webkit-text-stroke-width: 0.5px;
+    }
+
+    .inicio {
+        flex-direction: column;
+        margin-top: 20px;
+        gap: 20px;
+    }
+
+    .inicio img {
+        width: 100%;
+        margin: 0;
+    }
+
+    .servicios h2,
+    .nosotros h2,
+    .contacto h2 {
+        font-size: 2rem;
+    }
+
+    .servicios {
+        padding: 40px 2%;
+    }
+
+    .servicios-contenedor {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .nosotros {
+        padding: 40px 0;
+    }
+
+    .nosotros-contenedor {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .nosotros-contenedor img {
+        width: 100%;
+        margin: 0;
+    }
+
+    .contacto {
+        padding: 40px 2%;
+    }
+
+    .contacto-formulario {
+        padding: 20px 10px;
+    }
+
+    .contacto-formulario button {
+        padding: 10px 0;
+        width: 100%;
+    }
+
+    footer {
+        padding: 20px 0;
+        margin-top: 20px;
+    }
+
+    footer .redes-sociales {
+        gap: 20px;
+    }
+}
