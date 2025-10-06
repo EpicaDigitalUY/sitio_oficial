@@ -48,8 +48,8 @@
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Épica Digital UY",
-      "url": "https://tusitio.com",
-      "logo": "https://tusitio.com/img/icon_ED.png",
+      "url": "https://epicadigitaluy.com",
+      "logo": "https://epicadigitaluy.com/img/icon_ED.png",
       "sameAs": [
         "https://www.facebook.com/share/1HyuQiHuGE/?mibextid=wwXIfr",
         "https://www.linkedin.com/company/%C3%A9pica-digital/",
@@ -76,10 +76,18 @@
         </div>
 
         <!-- Botón hamburguesa -->
-        <div class="hamburguesa" id="hamburguesa">
-            <span></span>
-            <span></span>
-            <span></span>
+        <div class="hamburguesa " id="hamburguesa">
+            <span class="ham1"></span>
+            <span class="ham2"></span>
+            <span class="ham3"></span>
+        </div>
+        <div class="menu-hamburguesa">
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#nosotros">Sobre Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
         </div>
 
         <ul class="listas" id="menu">
@@ -156,29 +164,26 @@
                 <div class="img-integrante"><img src="/img/crew_franco_r.png" alt="Imagen de Franco"></div>
                 <div class="info-integrante">
                     <h3>Franco Ripoll</h3>
-                    <p>Rol asignado</p>
+                    <p class="rol">Fundador, Coordinador y FullStack</p>
                 </div>
             </div>
             <div class="integrante">
                 <div class="img-integrante"><img src="/img/crew_santiago_b.png" alt="Imagen de Santiago Baez"></div>
                 <div class="info-integrante">
                     <h3>Santiago Báez</h3>
-                    <p>Rol asignado</p>
+                    <p class="rol">Diseñador y Desarrollador Web</p>
                 </div>
             </div>
             <div class="integrante">
                 <div class="img-integrante"><img src="/img/crew_santiago_c.png" alt="Imagen de Santiago Carrasco"></div>
                 <div class="info-integrante">
                     <h3>Santiago Carrasco</h3>
-                    <p>Rol asignado</p>
+                    <p class="rol">Programador FullStack Web y Mobile</p>
                 </div>
             </div>
         </div>
 
         <div class="nosotros-contenedor">
-            <!-- <div class="nosotros-img">
-                <img src="img/crew.png" alt="Equipo Épica Digital">
-            </div> -->
             <div class="nosotros-texto">
                 <p>
                     En <strong>Épica Digital UY</strong>, somos un equipo apasionado por la innovación y la excelencia
@@ -242,28 +247,8 @@
         </div>
     </footer>
 
-    <script>
-        document.querySelector('contacto-formulario').addEventListener('submit', function (e) {
-            e.preventDefault();
 
-            const nombre = encodeURIComponent(document.getElementById('nombre').value);
-            const email = encodeURIComponent(document.getElementById('email').value);
-            const mensaje = encodeURIComponent(document.getElementById('mensaje').value);
-
-            const mailtoLink = `mailto:epicadigitaluy@gmail.com?subject=Mensaje de ${nombre}&body=Nombre: ${nombre}%0ACorreo: ${email}%0A%0A${mensaje}`;
-
-            // Abrimos el cliente de correo con el mailto
-            window.location.href = mailtoLink;
-        });
-
-        const hamburguesa = document.getElementById('hamburguesa');
-        const menu = document.getElementById('menu');
-
-        hamburguesa.addEventListener('click', () => {
-            menu.classList.toggle('active');
-        });
-    </script>
-
+<script src="./scripts.js"></script>
 </body>
 
 </html>
