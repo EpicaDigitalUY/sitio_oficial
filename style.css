@@ -52,6 +52,10 @@ p {
     line-height: 1.6;
 }
 
+a{
+    text-decoration: none;
+}
+
 /* Estilos del encabezado */
 
 header {
@@ -504,7 +508,7 @@ footer a {
     .banner {
         height: 25vh;
         width: auto;
-        margin-top: 30px;
+        margin-top: 7vh;
         padding-top: 20px;
         font-size: 1rem;
     }
@@ -512,7 +516,8 @@ footer a {
     h1,
     .font-color {
         font-size: 2rem;
-        -webkit-text-stroke-width: 0.5px;
+        -webkit-text-stroke-width: 1px;
+        letter-spacing: 2px;
     }
 
     .inicio {
@@ -582,4 +587,103 @@ footer a {
     footer .redes-sociales {
         gap: 20px;
     }
+}
+
+/* Estilos del botón de WhatsApp */
+
+.whatsapp-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/* Botón principal */
+.whatsapp-btn {
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-btn img {
+  width: 32px;
+  height: 32px;
+}
+
+/* Lista oculta por defecto */
+.whatsapp-list {
+  display: none;
+  flex-direction: column;
+  margin-bottom: 10px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  overflow: hidden;
+  animation: fadeIn 0.3s ease;
+}
+
+.whatsapp-list a {
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #05101f;
+  font-family: system-ui, sans-serif;
+  font-weight: 500;
+  border-bottom: 1px solid #eee;
+  transition: background 0.2s;
+}
+
+.coloring{
+    color: #1ac8bc;
+}
+
+.whatsapp-btn i{
+    color: white;
+    font-size: 30px;
+}
+
+.whatsapp-list a:last-child {
+  border-bottom: none;
+}
+
+.whatsapp-list a:hover {
+  background: #f1f1f1;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Cuando se despliega */
+.whatsapp-list.active {
+  display: flex;
+}
+
+/* Móviles */
+@media (max-width: 480px) {
+  .whatsapp-btn {
+    width: 55px;
+    height: 55px;
+  }
+  .whatsapp-list a {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
 }
