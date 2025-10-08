@@ -108,8 +108,8 @@ background:#f2ff42;
   --x: 75%;
   --y: 25%;
 
-  background: #d4d5ca;
-  border-color: #d4d5ca;
+  background: #f1f1f1;
+  border-color: #f3f3f3;
   width: var(--size);
   height: var(--size);
   border-radius: 50%;
@@ -153,6 +153,8 @@ header {
     position: fixed;
 }
 
+
+
 header img {
     height: 5rem;
     margin: .625rem .625rem .625rem 6.25rem;
@@ -195,7 +197,7 @@ header ul li a:hover {
     /* Ocupa el alto total de la pantalla */
     width: 100%;
     padding-top: 3.125rem;
-    background: url("img/banner.png") no-repeat center center;
+    background: url("img/banner.webp") no-repeat center center;
     background-size: cover;
     /* Ajusta la imagen para cubrir todo */
     display: flex;
@@ -444,6 +446,13 @@ body.dark .contacto-formulario {
 .contacto-formulario textarea:focus {
     border-color: #2ee0d4;
     outline: none;
+}
+
+body.dark .contacto-formulario input,
+body.dark .contacto-formulario textarea {   
+    background: #2e2e2e;
+    color: #e0e0e0;
+    border: 1px solid #e0e0e0;
 }
 
 .contacto-formulario button {

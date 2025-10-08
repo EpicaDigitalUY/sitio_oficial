@@ -37,3 +37,28 @@ themeToggle.addEventListener('click', () => {
     document.body.classList.toggle('dark');
     themeToggle.classList.toggle('active');
 });
+
+// Detecta el tema del sistema operativo
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.body.classList.add('dark');
+    themeToggle.classList.add('active');
+}
+
+localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+
+// Guarda la preferencia del usuario
+window.addEventListener('beforeunload', () => {
+    localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+});
+
+// Aplica la preferencia guardada al cargar la página   
+window.addEventListener('load', () => {
+    const savedTheme = localStorage.getItem('theme');  
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark');
+        themeToggle.classList.add('active');
+    } else { 
+        document.body.classList.remove('dark');
+        themeToggle.classList.remove('active');
+    }
+});
