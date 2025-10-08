@@ -36,10 +36,93 @@ body {
     box-sizing: border-box;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     cursor: url("./img/cursor.png") 0 0;   /* Cursor personalizado */
+    transition: 250ms;
+}
+
+body.dark {
+    background-color: #121212;
+    color: #e0e0e0;
 }
 
 section {
     margin: 0 9.375rem 0 9.375rem;
+}
+
+.sun-wrapper {
+    cursor: pointer;
+width: 50px;
+aspect-ratio: 1 / 1;
+position: relative;
+display: grid;
+place-items: center;
+}
+
+
+.toggle {
+    background-color: #f2ff42;
+height: 20%;
+width: 20%;
+aspect-ratio: 1 / 1;
+border-radius: 50%;
+border: 1px solid #f2ff42;
+position: relative;
+z-index: 5;
+transition: 250ms;
+}
+
+
+.rays {
+position: absolute;
+inset: 0;
+display: grid;
+place-items: center;
+z-index: 1;
+gap: 5px;
+pointer-events: none;
+}
+
+
+.ray {
+position: absolute;
+width: 5%;
+height: 28%;
+top: 25%;
+left: 50%;
+transform-origin: 50% 90%;
+border-radius: 2px;
+background:#f2ff42;
+}
+
+.rays .ray:nth-child(1) { transform: translateX(-49%) rotate(0deg); }
+.rays .ray:nth-child(2) { transform: translateX(-49%) rotate(45deg); }
+.rays .ray:nth-child(3) { transform: translateX(-49%) rotate(90deg); }
+.rays .ray:nth-child(4) { transform: translateX(-49%) rotate(135deg); }
+.rays .ray:nth-child(5) { transform: translateX(-49%) rotate(180deg); }
+.rays .ray:nth-child(6) { transform: translateX(-49%) rotate(225deg); }
+.rays .ray:nth-child(7) { transform: translateX(-49%) rotate(270deg); }
+.rays .ray:nth-child(8) { transform: translateX(-49%) rotate(315deg); }
+
+.sun-wrapper.active .toggle {
+--size: 25px;
+  --offset: 130%;
+  --x: 75%;
+  --y: 25%;
+
+  background: #d4d5ca;
+  border-color: #d4d5ca;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  mask-image: radial-gradient(
+    circle calc(var(--size) * 0.45) at var(--x) var(--y),
+    transparent var(--offset),
+    black calc(var(--offset) + 1%)
+  );
+}
+
+.sun-wrapper.active .rays {
+  opacity: 0;
+  transform: scale(0.5);
 }
 
 .font-color {
@@ -136,6 +219,7 @@ header ul li a:hover {
     line-height: 1.6;
 }
 
+
 .inicio-texto h1 {
     margin-bottom: 0;
     view-timeline-name: --scroll-inicio-h1; 
@@ -186,6 +270,10 @@ header ul li a:hover {
     color: #05101f;
 }
 
+body.dark .servicios h2 {
+    color: #e0e0e0;
+}
+
 .servicios-contenedor {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(17.5rem, 1fr));
@@ -200,6 +288,11 @@ header ul li a:hover {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+body.dark .servicio {
+    background: #1e1e1e;
+    border: solid .125rem #2ee0d4;
+}
+
 .integrante:hover, .servicio:hover {
     transform: translateY(.9375rem);
     transform: rotateX(-15deg);
@@ -210,6 +303,10 @@ header ul li a:hover {
     font-size: 24px;
     margin-bottom: .9375rem;
     color: #05101f;
+}
+
+body.dark .servicio h3 {
+    color: #e0e0e0;
 }
 
 .servicio p {
@@ -228,6 +325,10 @@ header ul li a:hover {
     margin-bottom: 1.25rem;
     color: #05101f;
     text-align: center;
+}
+
+body.dark .nosotros h2 {
+    color: #e0e0e0;
 }
 
 .nuestro-equipo {
@@ -266,6 +367,20 @@ header ul li a:hover {
     font-style: italic;
 }
 
+.integrante h3 {
+    margin: .625rem 0 .3125rem 0;
+    font-size: 1.25rem;
+    color: #05101f;
+}
+
+body.dark .integrante h3 {
+    color: #e0e0e0;
+}
+
+body.dark .rol {
+    color: #b0b0b0;
+}
+
 .nosotros-contenedor {
     display: flex;
     justify-content: space-between;
@@ -291,6 +406,10 @@ header ul li a:hover {
     color: #05101f;
 }
 
+body.dark .contacto h2 {
+    color: #e0e0e0;
+}
+
 .contacto-formulario {
     max-width: 37.5rem;
     margin: 0 auto;
@@ -303,6 +422,10 @@ header ul li a:hover {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
+}
+body.dark .contacto-formulario {
+    background: #1e1e1e;
+    border: solid .125rem #2ee0d4;
 }
 
 .contacto-formulario input,
@@ -335,9 +458,19 @@ header ul li a:hover {
     transition: background 0.3s;
 }
 
+body.dark .contacto-formulario button {
+    color: #e0e0e0;
+    border: solid .125rem #e0e0e0;
+}
+
 .contacto-formulario button:hover {
     background: #05101f;
     color: #fff;
+}
+
+body.dark .contacto-formulario button:hover {
+    background: #e0e0e0;
+    color: #05101f;
 }
 
 .contacto-info {
@@ -351,6 +484,10 @@ header ul li a:hover {
     font-size: 17.6px;
     transition: color 0.2s;
     margin-bottom: 1.25rem;
+}
+
+body.dark .contacto-contenedor a {
+    color: #e0e0e0;
 }
 
 .contacto-contenedor a:hover {
