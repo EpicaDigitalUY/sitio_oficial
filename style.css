@@ -126,7 +126,7 @@ background:#f2ff42;
 }
 
 .font-color {
-    color: #fff;
+    color: transparent;
     font-size: 4.375rem;
     -webkit-text-stroke-width: .0625rem;
     -webkit-text-stroke-color: #1ac8bc;
@@ -342,7 +342,7 @@ body.dark .nosotros h2 {
 
 .integrante {
     padding: .625rem 1.25rem;
-    border: solid .125rem #2ee0d4;
+    border: solid .125rem #1ac8bc;
     border-radius: .625rem;
     overflow: hidden;
     height: 368px;
